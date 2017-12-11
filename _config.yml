@@ -9,14 +9,8 @@ permalink: pretty
 
 collections:
   documentation:
-    title: Documentation TEST GAB
+    title: X400 Gateway
     position: 1
-  api:
-    title: APIs
-    position: 2
-  pippo:
-    title: TEST
-    position: 3
 gems:
   - jekyll-sitemap
   - jekyll-seo-tag
