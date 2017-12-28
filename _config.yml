@@ -8,9 +8,12 @@ google_analytics_key:
 permalink: pretty
 
 collections:
-  documentation:
-    title: X400 Gateway
+  platform:
+    title: MyMote platform
     position: 1
+  gateway:
+    title: X400 Gateway
+    position: 2
 gems:
   - jekyll-sitemap
   - jekyll-seo-tag
@@ -18,6 +21,7 @@ gems:
 exclude:
   - readme.md
   - LICENCE
+  - Notepad.md
 
 defaults:
   -
@@ -26,8 +30,3 @@ defaults:
     values:
       layout: default
 
-types:
-  - get
-  - put
-  - delete
-  - post
