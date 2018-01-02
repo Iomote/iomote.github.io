@@ -277,8 +277,7 @@ hr {
 }
 
 .left-docs {
-	
-	max-width: 800px;
+	width:100%;
 	float: left;
 	padding: 0 50px;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -295,7 +294,6 @@ hr {
 
 .right-code {
 	float: left;
-	max-width: 800px;
 	padding: 20px 50px 20px;
 	margin-left: auto;
 	margin-right: auto;
@@ -507,5 +505,26 @@ header {
 
 img + em { 
 	display: block; 
+	margin: auto;
 	text-align: center;
+}
+
+@media (max-width: 1000px) {
+	.img-doc { 
+		width: 100%;
+		height: auto;
+		display: block; 
+		margin: auto;
+		text-align: center;
+	}
+}
+
+@media (min-width: 1000px) {
+	.img-doc { 
+		width: 700px;
+		height: auto;
+		display: block; 
+		margin: auto;
+		text-align: center;
+	}
 }
