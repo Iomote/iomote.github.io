@@ -12,5 +12,7 @@ Prima di continuare è necessario effettuare le seguenti operazioni:
     3. Aprire il **Gestore schede** (menu *Strumenti -> Scheda:xxx -> Gestore schede*)
     4. Installare il pacchetto **Arduino SAMD Boards (32.bits ARM Cortex-M0+) by Arduino**
     5. Installare il pacchetto **Iomote X400 by Iomote**
-    6. Selezionare la scheda X400 dal menu *Strumenti -> Scheda:xxx -> Iomote X400*
-    7. A questo punto siete pronti a sviluppare sketch per il dispositivo X400
+    6. Aprire il **Gestore librerie** (menu *Sketch -> #include librerie -> Gestore librerie*)
+    7. Installare la libreria **RTCZero by Arduino**
+    8. Selezionare la scheda X400 dal menu *Strumenti -> Scheda:xxx -> Iomote X400*
+    9. A questo punto l'ambiente di sviluppo è pronto: è possibile sviluppare sketch per il dispositivo X400 tramite l'Arduino IDE.

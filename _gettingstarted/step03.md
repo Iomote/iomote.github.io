@@ -13,7 +13,7 @@ Per poter inviare dei messaggi dal dispositivo verso il cloud, è necessario scr
 #define SerialDebug   SerialUSB 
 
 void setup() {
-	//	This instruction initializes the board, it's mandatory for the example to work
+	//	This instruction initializes the board, it's mandatory for any sketch to correctly work with the X400 Cloud Operations!
 	Iomote.begin("getting started",0,0,1);	
 	
 	SerialDebug.write("X400 Getting Started!\r\n");
@@ -21,7 +21,7 @@ void setup() {
 
 
 void loop() {
-	//	Check on front button to detect the push event
+	//	Check of front button to detect the push event
 	if(Iomote.SwitchRead() == 0)
 	{
 		//	Two random number are created and are sent to the Iot Hub
@@ -59,7 +59,9 @@ void loop() {
 	}
 }
 ~~~
-Una volta copiato il codice, è necessario collegare il dispositivo X400 al computer tramite un USB. 
+
+Una volta copiato il codice, è necessario collegare il dispositivo X400 al computer tramite un USB. Il computer riconoscerà il dispositivo ed installerà i driver necessari (emulazione di porta seriale tramite USB).
+
 Una volta che il sistema operativo ha correttamente configurato il dispositivo connesso, nell'ambiente di sviluppo è necessario impostare la porta seriale di comunicazione: andare nel menu *Strumenti -> Porta: xxx* e selezionare la porta di comunicazione del dispositivo (per maggiori info si prega di seguire le guide disponibili su [www.arduino.cc](http://www.arduino.cc)).
 Per aggiornare il firmware bisogna premere l'icona "carica" (freccia destra).
 
