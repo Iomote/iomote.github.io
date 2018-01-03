@@ -15,4 +15,4 @@ Prima di continuare è necessario effettuare le seguenti operazioni:
     6. Aprire il **Gestore librerie** (menu *Sketch -> #include librerie -> Gestore librerie*)
     7. Installare la libreria **RTCZero by Arduino**
     8. Selezionare la scheda X400 dal menu *Strumenti -> Scheda:xxx -> Iomote X400*
-    9. A questo punto l'ambiente di sviluppo è pronto: è possibile sviluppare sketch per il dispositivo X400 tramite l'Arduino IDE.
+    9. A questo punto l'ambiente di sviluppo è pronto: è possibile sviluppare *sketch* per il dispositivo X400 tramite **Arduino IDE**.

@@ -17,6 +17,9 @@ collections:
   gettingstarted:
     title: Getting Started
     position: 3
+  arduino:
+    title: Iomote Library
+    position: 4
 gems:
   - jekyll-sitemap
   - jekyll-seo-tag

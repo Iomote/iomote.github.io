@@ -62,7 +62,7 @@ void loop() {
 
 Una volta copiato il codice, è necessario collegare il dispositivo X400 al computer tramite un USB. Il computer riconoscerà il dispositivo ed installerà i driver necessari (emulazione di porta seriale tramite USB).
 
-Una volta che il sistema operativo ha correttamente configurato il dispositivo connesso, nell'ambiente di sviluppo è necessario impostare la porta seriale di comunicazione: andare nel menu *Strumenti -> Porta: xxx* e selezionare la porta di comunicazione del dispositivo (per maggiori info si prega di seguire le guide disponibili su [www.arduino.cc](http://www.arduino.cc)).
+Dopo che il sistema operativo avrà correttamente configurato il dispositivo connesso, nell'ambiente di sviluppo è necessario impostare la porta seriale di comunicazione: andare nel menu *Strumenti -> Porta: xxx* e selezionare la porta di comunicazione del dispositivo (per maggiori info si prega di seguire le guide disponibili su [www.arduino.cc](http://www.arduino.cc)).
 Per aggiornare il firmware bisogna premere l'icona "carica" (freccia destra).
 
 Una volta terminato il caricamento dell'applicazione, il dispositivo attenderà la pressione del pulsante utente per inviare verso il cloud il messaggio con i dati casuali generati via codice.
