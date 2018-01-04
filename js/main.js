@@ -7,7 +7,8 @@ jQuery(function() {
 
 	var $el;
 
-	$("section > div.highlighter-rouge:first-of-type").each(function(i) {
+	/*$("section > div.highlighter-rouge:first-of-type").each(function(i) {*/
+	$("section > div.highlighter-rouge").each(function(i) {
 
 		var $this = $(this).before("<ul class=\"languages\"></ul>"),
 		$languages = $this.prev(),
