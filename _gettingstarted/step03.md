@@ -7,7 +7,7 @@ description: Scrittura di un programma demo
 Per poter inviare dei messaggi dal dispositivo verso il cloud, è necessario scrivere uno sketch con l'ambiente di sviluppo Arduino IDE. A titolo di esempio riportiamo un primo codice che invia dati casuali alla pressione del pulsante utente.
 
 *Copiare il contenuto seguente nell'editor dell'ambiente di sviluppo*
-~~~ C++
+~~~ cpp
 #include <iomoteClass.h>
 
 #define SerialDebug   SerialUSB 
