@@ -317,6 +317,10 @@ hr {
 }
 
 .code-viewer {
+	max-width: 900px;
+	.highlight{
+		font-size: 1.2em;
+	}
 	.languages {
 		padding: 0;
 		margin: 0 0 5px 0;
@@ -367,6 +371,10 @@ hr {
 
 .right-code .code-viewer a:hover {
 	color: #fff;
+}
+
+code.highlighter-rouge{
+	font-size: 1.3em;
 }
 
 @media (max-width: 10000px) {

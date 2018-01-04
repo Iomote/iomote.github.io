@@ -1,6 +1,6 @@
 ---
-title: Errors
-position: 3
+title: 
+position: 
 ---
 
 | Code | Name        | Description                      |

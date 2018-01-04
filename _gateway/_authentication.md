@@ -1,6 +1,6 @@
 ---
-title: Autenticazione TEST
-position: 2
+title:
+position: 
 right_code: |
   ~~~ javascript
   $.get("http://api.myapp.com/books/", { "token": "YOUR_APP_KEY"}, function(data) {
