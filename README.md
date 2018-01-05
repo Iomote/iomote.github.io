@@ -28,11 +28,12 @@ Before starting you need to meet some prerequisites:
 -  Install the **Arduino IDE** on your computer. You can find many tutorials on the Arduino website  [www.arduino.cc](http://www.arduino.cc) . Once you have installed the IDE you have to add the **software libraries for the X400 gateway**: 
 	1. Open the **Preferences** of the Arduino IDE (File-> Preferences)
 	2. In the "settings" tab, and in the **Additional board manager URL** field, add this URL `https://github.com/iomote/arduino-ide-bsp/raw/master/package_iomote_index.json`, then click OK.
-	3. Open the **Boards Manager** (Tools->Board:...->Board->Board Manager)
+	3. Open the **Boards Manager** (*Tools -> Board:... -> Board->Board Manager*)
 	4. Install the Arduino SAMD Boards (32-bits ARM Cortex-M0+) by Arduino package
 	5. Install the IOMote Gateway package
-	6. Select the desired device under **IOMote devices** in Tools->Board menu
-	7. Compile and upload your sketches as usual
+	6. Select X400 device under **IOMote devices** in *Tools -> Board* menu
+	7. Install **RTCZero** library by Arduino (*Sketch -> Include Library -> Manage Libraries*)
+	8. Compile and upload your sketches as usual
 
 <a name="PrepareDevice"></a>
 # Step 2: Register your Device
@@ -47,56 +48,57 @@ Copy the following sketch to the Arduino IDE.
 ~~~ C++
 #include <iomoteClass.h>
 
-#define SerialDebug   SerialUSB 
+#define Serial   SerialUSB 
 
-void setup() {
-	//	This instruction initializes the board, it's mandatory for the example to work
+void setup() 
+{
+	//	This instruction initializes the board, it's mandatory for any sketch to correctly work with the X400 Cloud Operations!
 	Iomote.begin("getting started",0,0,1);	
 	
-	SerialDebug.write("X400 Getting Started!\r\n");
-
+	Serial.write("X400 Getting Started!\r\n");
 }
 
-
-void loop() {
-	//	Check on front button to detect the push event
+void loop() 
+{
+	//	Check of front button to detect the push event
 	if(Iomote.SwitchRead() == 0)
 	{
 		//	Two random number are created and are sent to the Iot Hub
 		int16_t randomData = rand();
 		// 	Adding first number to the JSON string to send 
-		int8_t dataResult = Iomote.addData("random data 1", randomData);	
+		int8_t dataResult = Iomote.append((char*)"random data 1", randomData);	
 		randomData = rand();
 		//	Adding second number to the JSON string
-		dataResult += Iomote.addData("random data 2", randomData);
+		dataResult += Iomote.append((char*)"random data 2", randomData);
 		//	The JSON is finalized adding the timestamp, so the string is ready 
 		//	to be sent.
-		dataResult += Iomote.addTimestamp();
+		dataResult += Iomote.object();
 		if(dataResult == 0)
 		{
-			SerialDebug.write("Data added to queue...\r\n");
+			Serial.write("Data added to queue...\r\n");
 			//	With the sendData command the data is put in a queue, and wil be 
 			//	sent to IoT Hub. 
-			int8_t sendResult = Iomote.sendData();
+			int8_t sendResult = Iomote.send();
 			if(sendResult == 0)
 			{
-				SerialDebug.write("Data correctly enqueued and ready to be sent!\r\n");
+				Serial.write("Data correctly enqueued and ready to be sent!\r\n");
 			}
 			else
 			{
-				SerialDebug.write("Unable to send data now! Result: ");
-				SerialDebug.println(sendResult);
+				Serial.write("Unable to send data now! Result: ");
+				Serial.println(sendResult);
 			}
 		}
 		else
 		{
-			SerialDebug.write("Unable to add data! Result: ");
-			SerialDebug.println(dataResult);
+			Serial.write("Unable to add data! Result: ");
+			Serial.println(dataResult);
 		}
 		delay(1000);
 	}
 }
 ~~~
+
 Upload the sketch on the device using the standard USB connector on the X400 Gateway, then turn on the **serial monitor** on the Arduino IDE to debug the application. 
 Once started, the sketch waits for you to push on the X400 front button. When the button is pushed, the gateway will send a couple of random number to the IoT Hub, plus the timestamp. All the data is embedded inside a JSON string, so it'll be easier to parse it on your cloud app. In the next section you'll learn how to read that data from your application.
 
@@ -174,7 +176,7 @@ var rxQueue = function() {
   });
 }
 // set timed interval so in case your Service Bus client fails, it will register a new Queue Message received callback
-var recInterval = setInterval(rxQueue, 250);
+var recInterval = setInterval(rxQueue, 25);
 
 ~~~
 - on console run the following command
