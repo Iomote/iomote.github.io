@@ -12,48 +12,39 @@ Per poter inviare dei messaggi dal dispositivo verso il cloud, è necessario scr
 
 #define SerialDebug   SerialUSB 
 
-void setup() {
+void setup() 
+{
 	//	This instruction initializes the board, it's mandatory for any sketch to correctly work with the X400 Cloud Operations!
-	Iomote.begin("getting started",0,0,1);	
+	Iomote.begin("getting started", 1,0,0);	
 	
 	SerialDebug.write("X400 Getting Started!\r\n");
 }
 
+char buff[3750]; // max message size is 3750 bytes
 
-void loop() {
+void loop() 
+{
 	//	Check of front button to detect the push event
 	if(Iomote.SwitchRead() == 0)
 	{
+		memset(buff, '\0', 3750);
 		//	Two random number are created and are sent to the Iot Hub
-		int16_t randomData = rand();
-		// 	Adding first number to the JSON string to send 
-		int8_t dataResult = Iomote.append((char*)"random data 1", randomData);	
-		randomData = rand();
-		//	Adding second number to the JSON string
-		dataResult += Iomote.append((char*)"random data 2", randomData);
-		//	The JSON is finalized adding the timestamp, so the string is ready 
-		//	to be sent.
-		dataResult += Iomote.object();
-		if(dataResult == 0)
+		int16_t randomData1 = rand();
+		int16_t randomData2 = rand();
+		time_t now = Iomote.rtc.getEpoch();
+		sprintf(buff, "{\"rand_1\":%d,\"rand_2\":%d,\"ts\":%u}", randomData1, randomData2, now);
+
+		//	With the sendData command the data is put in a queue, and wil be 
+		//	sent to IoT Hub. 
+		int8_t sendResult = Iomote.message(buff);
+		if(sendResult == 0)
 		{
-			SerialDebug.write("Data added to queue...\r\n");
-			//	With the sendData command the data is put in a queue, and wil be 
-			//	sent to IoT Hub. 
-			int8_t sendResult = Iomote.send();
-			if(sendResult == 0)
-			{
-				SerialDebug.write("Data correctly enqueued and ready to be sent!\r\n");
-			}
-			else
-			{
-				SerialDebug.write("Unable to send data now! Result: ");
-				SerialDebug.println(sendResult);
-			}
+			SerialDebug.write("Data correctly enqueued and ready to be sent!\r\n");
 		}
 		else
 		{
-			SerialDebug.write("Unable to add data! Result: ");
-			SerialDebug.println(dataResult);
+			SerialDebug.write("Unable to send data now! Result: ");
+			SerialDebug.println(sendResult);
 		}
 		delay(1000);
 	}
