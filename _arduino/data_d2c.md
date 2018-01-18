@@ -22,22 +22,22 @@ E' possibile inviare anche dei messaggi di notifica alla dashboard Iomote. Tali 
 ### Funzioni disponibili
 ---
 ~~~ cpp
-Iomote.message(char* text)
+Iomote.message(char* payload)
 ~~~
-Permette di inserire il messaggio **text** fornito nella coda dei messaggi dell'**Iomote Core**. Tale messaggio verrà automaticamente inviato non appena sarà possibile. Il messaggio viene inoltre salvato in una memoria non volatile, in modo da essere recuperato in caso di assenza di connettività oppure di alimentazione prolungata.
+Permette di inserire il messaggio **payload** fornito nella coda dei messaggi dell'**Iomote Core**. Tale messaggio verrà automaticamente inviato non appena sarà possibile. Il messaggio viene inoltre salvato in una memoria non volatile, in modo da essere recuperato in caso di assenza di connettività oppure di alimentazione prolungata.
 
 Risultato dell'operazione: 0 in caso di successo, altrimenti viene fornito un codice di errore.
 
 ---
 ~~~ cpp
-Iomote.notification(int level, char* text)
+Iomote.notification(int level, char* payload)
 ~~~
 Permette di inviare un messaggio di notifica alla dashboard del **MyMote Platform**.
-* Il primo parametro è il livello di notifica
+* Il primo parametro (**level**) è il livello di notifica
     * 0 = notification
     * 1 = warning
     * 2 = alarm
-* Il second parametri è il messaggio testuale da inviare (fino a 100 bytes)
+* Il secondo parametro (**payload**) è il messaggio testuale da inviare (fino a 100 bytes)
 
 Risultato dell'operazione: 0 in caso di successo, altrimenti viene fornito un codice di errore.
 

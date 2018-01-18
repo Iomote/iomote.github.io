@@ -23,6 +23,16 @@ A titolo di esempio, chiamando la funzione Iomote.begin("my app", 1,2,3); verrà
 
 La funzione begin sincronizza anche l'RTC dell'**Application Processor** con il valore UTC attuale: **Iomote Core** prende il valore del timestamp UTC da server online, in modo da avere calendario ed orario sincronizzati con valori reali. La libreria delegata alla gestione dell'RTC è la RTCZero (una libreria ufficiale arduino), per ogni ulteriore informazione si prega di far riferimento alla documentazione di tale libreria.
 
+### Iomote.devKeyRead
+~~~ cpp
+Iomote.devKeyRead(char* devKeyBuff)
+~~~
+
+La funzione devKeyRead permette di copiare la stringa devKey nel buffer devKeyBuff fornito dall'utente.
+* **Nota**: il buffer devKeyBuff deve essere un array di char di almeno 65 bytes.
+* La stringa **devKey** serve ad effettuare l'associazione del dispositivo con l'account utente nel portale della **MyMote Platform**.
+
+Risultato dell'operazione: 0 in caso di successo, altrimenti viene fornito un codice di errore.
 
 ### Debug: Interfacce Seriali Disponibili
 Per poter avere *messaggi di debug su un monitor seriale* (per esempio il Serial Monitor dell'IDE Arduino), e quindi tenere traccia dell'esecuzione dell'applicazione utente, due interfacce seriali sono disponibili: **Serial1** e **SerialUSB**. 
