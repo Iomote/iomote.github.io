@@ -6,12 +6,12 @@ description: Suggerimenti sull'integrazione di librerie di terze parti con la Io
 
 
 ### Gestione dell'inizializzazione hardware
-Dato che il dispositivo Iomote X400 deve essere inizializzato correttamente all'avvio di una Applicazione nell'**Application Processor**, suggeriamo fortemente di inserire la funzione `Iomote.begin(...)` come primo comando della funzione `setup()` di Arduino.
-Tutte le inizializzazioni delle librerie e dell'hardware di terze parti possono essere inserite dopo, riconfigurando in caso i segnali già impostati dalla classe Iomote.
+Dato che il dispositivo Iomote X400 deve essere inizializzato correttamente all'avvio di ogni Applicazione in esecuzione sull'**Application Processor**, suggeriamo fortemente di inserire la funzione `Iomote.begin(...)` come primo comando della funzione `setup()` di Arduino.
+Tutte le inizializzazioni delle librerie e dell'hardware di terze parti possono essere inserite dopo, riconfigurando i segnali già impostati dalla classe Iomote se necessario.
 
 Per esempio, se l'applicazione deve inizializzare un sensore digitale di temperatura ed umidità connesso al pin 6, suggeriamo di procedere come segue:
 * Usare la funzione `Iomote.begin(...)` per inizializzare l'hardware correttamente
-* Usare poi le funzioni fornite nella libreria del sensore per inizializzare il pin 6 correttamente.
+* Usare poi le funzioni fornite nella libreria del sensore per inizializzare il pin 6 correttamente (per esempio `devXYZ.init(6);`)
 
 ---
 ### Debug Monitor
@@ -20,6 +20,7 @@ Molti esempi online per Arduino utilizzano l'oggetto `Serial` come interfaccia p
 ~~~ cpp
 #define Serial SerialUSB // use Serial1 for external connector pins UART or SerialUSB for CDC USB Uart
 ~~~
+E' quindi possibile definire **Serial** come **SerialUSB** oppure **Serial1** a seconda delle necessità dell'utente, e poi usare la denominazione *Serial* all'interno del codice.
 
 #### Attendere la connessione del PC alla porta SerialUSB
 In caso si sia scelto di usare la porta SerialUSB, bisogna considerare alcuni aspetti peculiari di tale interfaccia. Essendo una porta UART emulata tramite USB CDC, è possibile attendere che il PC sia effettivamente connesso tramite il cavo USB.

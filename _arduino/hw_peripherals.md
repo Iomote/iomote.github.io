@@ -64,7 +64,7 @@ Il device Iomote X400 integra una porta seriale industriale configurabile come *
 ~~~ cpp
 Iomote.SerialBegin(baudrate, mode)
 ~~~
-La funzione inizializza la porta seriale con il baudrate fornito. La modalità sarà data dal parametro mode secondo i valori di seguito riportati:
+La funzione inizializza la porta seriale con il baudrate fornito. La modalità sarà data dal parametro mode usando i valori di seguito riportati:
 * RTS_CTS_OFF → porta seriale configurata come RS232 con i soli segnali TX ed RX
 * RTS_CTS_ON → porta seriale configurata come RS232 con i segnali TX, RX, RTS e CTS
 * RS485 → porta seriale configurata come RS485.

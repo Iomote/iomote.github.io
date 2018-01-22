@@ -10,14 +10,14 @@ Per poter inviare dei messaggi dal dispositivo verso il cloud, è necessario scr
 ~~~ cpp
 #include <iomoteClass.h>
 
-#define SerialDebug   SerialUSB 
+#define Serial   SerialUSB 
 
 void setup() 
 {
 	//	This instruction initializes the board, it's mandatory for any sketch to correctly work with the X400 Cloud Operations!
 	Iomote.begin("getting started", 1,0,0);	
 	
-	SerialDebug.write("X400 Getting Started!\r\n");
+	Serial.write("X400 Getting Started!\r\n");
 }
 
 char buff[3750]; // max message size is 3750 bytes
@@ -39,12 +39,12 @@ void loop()
 		int8_t sendResult = Iomote.message(buff);
 		if(sendResult == 0)
 		{
-			SerialDebug.write("Data correctly enqueued and ready to be sent!\r\n");
+			Serial.write("Data correctly enqueued and ready to be sent!\r\n");
 		}
 		else
 		{
-			SerialDebug.write("Unable to send data now! Result: ");
-			SerialDebug.println(sendResult);
+			Serial.write("Unable to send data now! Result: ");
+			Serial.println(sendResult);
 		}
 		delay(1000);
 	}

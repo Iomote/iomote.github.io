@@ -5,7 +5,7 @@ description: Guida alla preparazione dell'ambiente di sviluppo Visual Studio Cod
 --- 
 
 Microsoft Visual Studio Code è un ambiente di sviluppo multipiattaforma opensource. Tramite l'utilizzo di estensioni è possibile ampliare le capacità di tale software.
-Nel nostro caso, utilizzando l'estensione *Arduino for Visual Studio Code* di Microsoft.
+Nel nostro caso, utilizzando l'estensione *Arduino for Visual Studio Code* di Microsoft, è possibile scrivere e compilare codice per Arduino.
 
 ### Preparazione di Microsoft Visual Studio Code
 Per installare Visual Studio Code è sufficiente recarsi alla [pagina del prodotto](https://code.visualstudio.com/) e seguire la guida nel sito.

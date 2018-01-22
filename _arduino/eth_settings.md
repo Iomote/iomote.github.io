@@ -5,7 +5,7 @@ description: Settaggi avanzati per l'utilizzo dell'Ethernet in una rete priva di
 ---
 
 I parametri DHCP di configurazione della rete ethernet possono essere configurati tramite una Applicazione eseguita dall'**Application Processor**.
-Se il DHCP è disabilitato, tutti i parametri di rete devono essere correttamente impostati affinchè il dispositivo X400 comunichi correttamente con il Cloud.
+Se il DHCP è disabilitato, tutti i parametri di rete devono essere correttamente impostati affinchè il dispositivo X400 comunichi correttamente con il Cloud utilizzando l'interfaccia di rete Ethernet.
 
 ### Settaggio dei parametri DHCP
 I parametri DHCP forniti dall'applicazione sono memorizzati in una memoria "non volatile" e saranno quindi sempre utilizzati dall'**Iomote Core** ad ogni sua configurazione dell'interfaccia di rete etherent.
@@ -16,7 +16,7 @@ Nel caso non sia più necessario usare dei parametri DHCP è bene ricordarsi di 
 ~~~ cpp
 Iomote.setDHCP(value)
 ~~~
-Imposta se usare il DHCP Client o meno. Se value è false, allora il DHCP Client è disabilitato e la connessione Ethernet utilizzerà i parametri forniti dall'utente.
+Imposta l'utilizzo del DHCP Client. Se value è false, allora il DHCP Client è disabilitato e la connessione Ethernet utilizzerà i parametri forniti dall'utente.
 ---
 ~~~ cpp
 Iomote.setIP(ip_0, ip_1, ip_2, ip_3)
