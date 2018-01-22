@@ -46,25 +46,56 @@ To register the device with your account you have to access your Iomote account,
 ##3.1 Running the sample code on the Arduino IDE
 Copy the following sketch to the Arduino IDE. 
 ~~~ C++
+/*
+* Getting started
+* Basic example to 
+*  - read Device Key string and print it to Serial Monitor 
+*  - send 2 random numbers as data to the cloud when the button is pressed.
+*
+* License: MIT license
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*/
 #include <iomoteClass.h>
 
-#define SerialDebug   SerialUSB 
+#define Serial   SerialUSB 
+
+char devKeyBuff[65]; // 64 bytes are used for devKey value, 1 byte for terminator char
+char buff[3750]; // max message size is 3750 bytes
 
 void setup() 
 {
 	//	This instruction initializes the board, it's mandatory for any sketch to correctly work with the X400 Cloud Operations!
 	Iomote.begin("getting started", 1,0,0);	
 	
-	SerialDebug.write("X400 Getting Started!\r\n");
+	Serial.write("X400 Getting Started!\r\n");
 }
-
-char buff[3750]; // max message size is 3750 bytes
 
 void loop() 
 {
 	//	Check of front button to detect the push event
 	if(Iomote.SwitchRead() == 0)
 	{
+		memset(devKeyBuff, '\0', 65);
+		// Read devKey from device:
+		int8_t result = Iomote.devKeyRead(devKeyBuff);
+		if(result == 0)
+		{
+			Serial.write("devKey: ");
+			Serial.println(devKeyBuff);
+		}
+		else
+		{
+			Serial.write("Unable to send data now! Result: ");
+			Serial.println(result);
+		}
+
 		memset(buff, '\0', 3750);
 		//	Two random number are created and are sent to the Iot Hub
 		int16_t randomData1 = rand();
@@ -77,12 +108,12 @@ void loop()
 		int8_t sendResult = Iomote.message(buff);
 		if(sendResult == 0)
 		{
-			SerialDebug.write("Data correctly enqueued and ready to be sent!\r\n");
+			Serial.write("Data correctly enqueued and ready to be sent!\r\n");
 		}
 		else
 		{
-			SerialDebug.write("Unable to send data now! Result: ");
-			SerialDebug.println(sendResult);
+			Serial.write("Unable to send data now! Result: ");
+			Serial.println(sendResult);
 		}
 		delay(1000);
 	}

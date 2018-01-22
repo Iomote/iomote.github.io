@@ -24,3 +24,6 @@ Per aprire la cartella del progetto andare sul menu **Sketch -> Apri cartella de
 
 In **Visual studio code** invece, aprire il file *arduino.json* all'interno della cartella *.vscode* del progetto. Inserire la stringa
 `"output": "./build"` all'interno del file json di configurazione. Tutti i file di compilazione verranno generati all'interno di tale cartella, compreso il file **.bin** da utilizzare nella **MyMote platform**.
+
+### Come usare la App caricate
+Le App caricate nella piattaforma **MyMote platform** potranno essere inviate ai dispositivi dell'utente aggiornandoli da remoto. Per ulteriori informazioni andare alla sezione **Gestione Device**.

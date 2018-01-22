@@ -20,7 +20,7 @@ La pagina è divisa in due parti:
 - **Sezione dettagli**: viene attivata per ogni singolo device cliccando sulla tabella della sezione centrale. Contiene le informazioni dettagliate relative a ogni singolo device e la possibilità di aggiornare i firmware di comunicazione o le app. 
 
 
-## Modifica delle informazio di un dispositivo
+## Modifica delle informazioni di un dispositivo
 Premendo sul pulsante *Edit* della sezione dettagli, verrà aperta una form con le informazioni del dispositivo:
 - **Name**: può essere modificato il nome assegnato durante l'associazione con l'account utente.
 - **Location**: possono essere modificate le coordinate della localizzazione fornite dall'utente.
