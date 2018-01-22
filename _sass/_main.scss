@@ -536,3 +536,23 @@ img + em {
 		text-align: center;
 	}
 }
+
+@media (max-width: 700px) {
+	.img-doc-small { 
+		width: 100%;
+		height: auto;
+		display: block; 
+		margin: auto;
+		text-align: center;
+	}
+}
+
+@media (min-width: 500px) {
+	.img-doc-small { 
+		width: 500px;
+		height: auto;
+		display: block; 
+		margin: auto;
+		text-align: center;
+	}
+}
