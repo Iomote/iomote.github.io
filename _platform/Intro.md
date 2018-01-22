@@ -10,5 +10,5 @@ position: 1
 ![Architettura](./images/Architettura.jpg){: class="img-doc"}
 *Architettura della piattaforma e della comunicazione con i device* 
 
-L'utente avrà modo di accedere alla MyMote platform tramite browser, autenticandosi con username e password, oppure, tramite **API**, dalla propria applicazione, per ottenere informazioni sui device o eseguire operazioni su di essi in maniera programmatica. 
+L'utente avrà modo di accedere alla MyMote platform tramite browser, autenticandosi con username e password. Sono disponibili **REST-API** per ottenere informazioni sui device o eseguire operazioni su di essi in maniera programmatica, dalla propria applicazione Web.
 Nei seguenti paragrafi verranno analizzate le varie sezioni della MyMote platform e le relative funzionalità.
