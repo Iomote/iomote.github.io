@@ -45,23 +45,24 @@ I segnali dell'**Application processor** sono riportati su un connettore a 20 vi
 
 | **PIN** | **NAME** | **DESCRIPTION** |
 | :---: | :---: | --- |
-| **1** | AN0 | Analog input 0-3.3V (12bit ADC) |
-| **2** | AN1 | Analog input 0-3.3V (12bit ADC) |
-| **3** | AN2 | Analog input 0-3.3V (12bit ADC) |
+| **1** | A0 | Analog input 0-3.3V (12bit ADC) |
+| **2** | A1 | Analog input 0-3.3V (12bit ADC) |
+| **3** | A2 | Analog input 0-3.3V (12bit ADC) |
 | **4** | GND | Ground |
-| **5** | DI0 | Digital input |
-| **6** | DI1 | Digital input |
-| **7** | DI2 | Digital input |
-| **8** | DI3 | Digital input |
-| **9** | SPI-MISO | SPI MISO signal |
-| **10** | SW1 | Front panel switch input (digital level: 1-open 0-pressed) |
-| **11** | SPI-MOSI | SPI MOSI signal |
-| **12** | I2C-SCL | I2C Clock signal |
-| **13** | SPI-SCK | SPI Clock signal |
-| **14** | I2C-SDA | I2C Clock signal |
-| **15** | LED | Front panel led output (1-ON 0-OFF) |
-| **16** | UART-RX | Uart signal RX (input) |
-| **17** | RESET | Reset (only the Arduino-compatible processor M0+) |
-| **18** | UART-TX | Uart signal TX (output) |
+| **5** | 12 | Digital i/o |
+| **6** | 6 | Digital i/o |
+| **7** | 11 | Digital i/o |
+| **8** | 5 | Digital i/o |
+| **9** | 10 | SPI-MISO - SPI MISO signal |
+| **10** | 4 | Front panel switch input (digital level: 1-open 0-pressed) |
+| **11** | 9 | SPI-MOSI - SPI MOSI signal |
+| **12** | 3 | I2C-SCL - I2C Clock signal (*should be used as i2c only!*) |
+| **13** | 8 | SPI-SCK - SPI Clock signal |
+| **14** | 2 | I2C-SDA - I2C Data signal (*should be used as i2c only!*) |
+| **15** | 7 | LED - Front panel led output (1-ON 0-OFF) |
+| **16** | 1 | UART-RX - Serial1 signal RX (input) |
+| **17** | RESET | Reset (*resets only Application processor!*) |
+| **18** | 0 | UART-TX - Serial1 signal TX (output) |
 | **19** | GND | Ground |
-| **20** | 3V3 | Output (limited to max 500mA) |
+| **20** | 3V3 | Output (*limited to max 500mA*) |
+

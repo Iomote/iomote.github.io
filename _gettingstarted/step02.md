@@ -1,5 +1,5 @@
 ---
-title: Preparazione del dispositivo (associazione account utente)
+title: Associazione account utente
 position: 2
 description: Prima accensione del dispositivo
 ---
