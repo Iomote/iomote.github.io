@@ -10,7 +10,7 @@ Il dispositivo **X400** dispone di due connettori accessibili all'utente:
 #### Connettore industriale
 I seguenti segnali sono disposti su due connettori a vite, e disponibili nell'applicazione utente dell'**Application processor** tramite le librerie sviluppate da **Iomote** (per ulteriori informazioni vedere la sezione *Iomote library*).
 
-![Architettura](./images/PinoutArduino_Industrial.png){: class="img-doc-small"}
+![Architettura](./images/PinoutLayout.png){: class="img-doc"}
 
 I segnali del connettore industriale sono:
 
