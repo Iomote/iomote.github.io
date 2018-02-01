@@ -11,11 +11,11 @@ collections:
   platform:
     title: MyMote platform
     position: 1
-  gateway:
-    title: X400 Gateway
-    position: 2
   gettingstarted:
     title: Getting Started
+    position: 2
+  gateway:
+    title: X400 Gateway
     position: 3
   arduino:
     title: Iomote Library

@@ -1,6 +1,6 @@
 ---
 title: Provisioning
-subtitle: Add a new Device to your account
+description: Add a new Device to your account
 position: 3
 ---
 
