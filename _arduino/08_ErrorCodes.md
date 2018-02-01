@@ -1,7 +1,6 @@
 ---
-title: Codici di errore
-position: 6
-description: Codici di errore in risposta ai comandi della classe Iomote
+title: Error Codes
+position: 8
 ---
 
 | Error Name | Value | Description |
