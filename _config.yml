@@ -18,7 +18,7 @@ collections:
     title: X400 Gateway
     position: 3
   arduino:
-    title: Iomote Library for Arduino IDE
+    title: Iomote Library
     position: 4
 gems:
   - jekyll-sitemap
