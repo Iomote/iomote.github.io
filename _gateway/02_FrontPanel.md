@@ -10,7 +10,8 @@ The front panel of the X400 contains:
 - **LED "STATUS"**: Led available for the user application
 - **micro USB port**: serial port to communicate with the app-processor, can be used to download the app on the device and for debug purposes.
 
-TODO front panel image
+![X400 Front Panel](./images/X400_FrontPanel.png){: class="img-doc"}
+*X400 Front Panel*
 
 The front leds show the status of the device in several conditions reported in the table:
 

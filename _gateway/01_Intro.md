@@ -10,8 +10,8 @@ X400 is composed by two parts:
 
 These two parts communicate with easy-to-use serial API, so the App-processor can easily send data to the cloud, without. 
 
-
-TODO inserire disegno architettura
+![X400 System Architecture](./images/X400_SystemArchitecture.png){: class="img-doc"}
+*X400 System Architecture*
 
 
 X400 offers several connectors with I/O, serial port and other signals managed by the App-processor.

@@ -5,6 +5,10 @@ position: 4
 
 In this section will be covered all the commands to control the signals of the main connector. The commands are issued as methods of the object Iomote
 
+
+---
+
+
 ### **Analog and digital IO**
 ~~~ cpp
 Iomote.analogRead(int channel)
@@ -18,6 +22,9 @@ Iomote.analogRead(int channel)
 - A float (floating point) number with the read value, in case of channel 1 the value is expressed in mA, in case of channel 2 is expressed in Volts
 
 
+---
+
+
 ~~~ cpp
 Iomote.digitalRead(int input)
 ~~~
@@ -29,6 +36,9 @@ Iomote.digitalRead(int input)
 **Returns**
 A int number with the read value (LOW or HIGH)
 
+---
+
+
 ~~~ cpp
 Iomote.digitalWrite(int pin, int value)
 ~~~
@@ -38,6 +48,7 @@ Iomote.digitalWrite(int pin, int value)
  - **RELAY_OUT** is the on-board relay
 - **value**: the value you want to write (LOW or HIGH)
 
+---
 
 ### **RS232/RS485 port**
 Serial port of main connector can be used as RS232 or RS485, but not at the same time. All the methods of Arduino Serial class are wrapped to Iomote class methods with similar implementations.
@@ -62,3 +73,4 @@ All the other Serial class methods can be used in the same way as Arduino Refere
 | `Serial.peek( )` | → | `Iomote.serialPeek( )` |
 | `Serial.flush( )` | → | `Iomote.serialFlush( )` |
 | `Serial.write( ... )` | → | `Iomote.serialWrite( ... )` |
+

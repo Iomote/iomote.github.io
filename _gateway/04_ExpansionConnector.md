@@ -5,7 +5,7 @@ position: 4
 
 The expansion connector uses 3.3V level signals and is generally used for prototyping or to connect expansions, like the dev kit with sensors and display.
 
-![Expansion Connector](./images/PinoutArduino.png){: class="img-doc"}
+![Expansion Connector](./images/PinoutArduino.jpg){: class="img-doc-small"}
 
 Expansion connector pinout:
 

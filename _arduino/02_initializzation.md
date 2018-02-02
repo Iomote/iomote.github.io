@@ -3,6 +3,7 @@ title: Initialization
 position: 2
 ---
 
+
 ### Iomote object initialization
 Most of the following commands leverages on the object Iomote, that is instantiated during the initialization phase. In the setup function it must be initialized using the proper command:
 ~~~ cpp
@@ -24,6 +25,10 @@ The method initializes the hardware and communicates the Application name and ve
 {: .error}
 
 The **App name and App version** running on a specific device are shown on *MyMote - Devices section*.
+
+
+---
+
 
 ### Reading the Device Key
 ~~~ cpp
