@@ -20,6 +20,9 @@ collections:
   arduino:
     title: Iomote Library
     position: 4
+  restapi:
+    title: Rest API
+    position: 5
 gems:
   - jekyll-sitemap
   - jekyll-seo-tag

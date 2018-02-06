@@ -14,5 +14,5 @@ Each message is forwarded to your queue on the Microsoft Azure Service Bus and i
 ![Architettura](./images/Architettura.jpg){: class="img-doc"}
 *MyMote platform architecture* 
 
-MyMote can be accessed via browser on any device with username and password authentication. A set of **REST-API** are available to get information on each device or to automate device-level operations (OTA and others).
+MyMote can be accessed via browser on any device with username and password authentication. A set of [**REST-API**](/#restapi01_Intro) are available to get information on each device or to automate device-level operations (OTA and others).
 In the next chapters you will learn how to use MyMote platform and how to create App running on X400 gateway.
