@@ -53,3 +53,20 @@ Following is a list of all available APIs related to **devices management**
 - type: **POST**
 - endpoint: *api/user/{userid}/{webapi_key}/devices/{deviceid}/newfirmware/{firmwareid}/NOW*
 - result: `ERROR` or `RESULT`      	
+
+---
+
+### **Send a User Message (Cloud to Device)**
+- type: **POST**
+- endpoint: *api/user/{userid}/{webapi_key}/devices/{deviceid}/sendmsg*
+- result: `ERROR` or `RESULT` 
+- header:
+    - '_Content-Type: application/json_' is needed
+- body content:
+    - message _payload_ should be a UTF-8 string sent in a JSON formatted packet
+    ``` json
+    {
+        "msg": "payload"
+    }
+    ```
+    where "_payload_" is the message content surrounded by **"** characters
