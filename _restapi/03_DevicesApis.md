@@ -56,17 +56,35 @@ Following is a list of all available APIs related to **devices management**
 
 ---
 
+
 ### **Send a User Message (Cloud to Device)**
 - type: **POST**
-- endpoint: *api/user/{userid}/{webapi_key}/devices/{deviceid}/sendmsg*
+- endpoint: *api/user/{userid}/{webapi_key}/devices/{deviceid}/sendjson*
 - result: `ERROR` or `RESULT` 
 - header:
     - '_Content-Type: application/json_' is needed
 - body content:
-    - message _payload_ should be a UTF-8 string sent in a JSON formatted packet
-    ``` json
-    {
-        "msg": "payload"
-    }
-    ```
-    where "_payload_" is the message content surrounded by **"** characters
+    - body _payload_ should be valid JSON object. For example it can be:
+        -   any UNICODE string:
+        ``` json
+        "This is my example string message. I can also add double quoted chars using the break special char \" instead of double quote char"
+        ```
+        - or any other JSON object:
+        ``` json
+        {
+            "string": "my string",
+            "array": [
+                {
+                    "intNumber": 1
+                },
+                {
+                    "doubleNumber": 2.087
+                },
+                {
+                    "boolean": true
+                }
+            ]
+        }
+        ```
+
+>For further reference on JSON format please refere to [JSON website](https://www.json.org/)
