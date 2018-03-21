@@ -21,7 +21,7 @@ In addition, X400 **Iomote Core** can receive user messages from cloud (cloud to
 
 ### **Data Messages**
 ~~~ cpp
-Iomote.message(char* payload)
+Iomote.sendMessage(char* payload)
 ~~~
 **Parameters**
 - **payload**: the message to be sent to cloud. *Payload max length is 3750 bytes*
@@ -36,7 +36,7 @@ Iomote.message(char* payload)
 
 ### **Notifications**
 ~~~ cpp
-Iomote.notification(int level, char* payload)
+Iomote.sendNotification(int level, char* payload)
 ~~~
 **Parameters**
 - **level**: the type of notification you want to send
