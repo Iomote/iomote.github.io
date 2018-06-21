@@ -9,7 +9,7 @@ Sometimes it could be useful to assign static network parameters to **Iomote Cor
 
 ### **Enabled/Disable DHCP Client**
 ~~~ cpp
-Iomote.netDHCP(bool dhcp_on)
+void Iomote.netDHCP(bool dhcp_on)
 ~~~ 
 **Parameters**
 - **value**: the new status of dhcp client usage
@@ -20,7 +20,7 @@ Iomote.netDHCP(bool dhcp_on)
 
 ### **IP Address of device on local network**
 ~~~ cpp
-Iomote.netIP(int n0, int n1, int n2, int n3)
+void Iomote.netIP(int n0, int n1, int n2, int n3)
 ~~~
 **Parameters**
 - **n0, n1, n2, n3**: the 4 bytes values of desired device IP address
@@ -30,7 +30,7 @@ Iomote.netIP(int n0, int n1, int n2, int n3)
 
 ### **Subnet**
 ~~~ cpp
-Iomote.netSubnet(int n0, int n1, int n2, int n3)
+void Iomote.netSubnet(int n0, int n1, int n2, int n3)
 ~~~
 **Parameters**
 - **n0, n1, n2, n3**: the 4 bytes values of desired subnet IP address
@@ -40,7 +40,7 @@ Iomote.netSubnet(int n0, int n1, int n2, int n3)
 
 ### **Gateway IP**
 ~~~ cpp
-Iomote.netGateway(int n0, int n1, int n2, int n3)
+void Iomote.netGateway(int n0, int n1, int n2, int n3)
 ~~~
 **Parameters**
 - **n0, n1, n2, n3**: the 4 bytes values of desired gateway IP address
@@ -50,7 +50,7 @@ Iomote.netGateway(int n0, int n1, int n2, int n3)
 
 ### **DNS IP**
 ~~~ cpp
-Iomote.netDNS(int n0, int n1, int n2, int n3)
+void Iomote.netDNS(int n0, int n1, int n2, int n3)
 ~~~ 
 **Parameters**
 - **n0, n1, n2, n3**: the 4 bytes values of desired DNS IP address
@@ -60,13 +60,15 @@ Iomote.netDNS(int n0, int n1, int n2, int n3)
 
 ### **Apply and Save new configuration**
 ~~~ cpp
-Iomote.applyNetConfig( )
+int8_t Iomote.applyNetConfig( )
 ~~~
 **Returns**
 - **0** in case of success
 - **error code** otherwise (refer to [error codes table](/#arduino08_ErrorCodes))
 
-When **App processor** code executes this method, all the configuration is sent to **Iomote Core**. **This new configuration is saved on non-volatile-memory, so each time the device is rebooted, this custom configuration is used.**
+When **App processor** code executes this method, all the configuration is sent to **Iomote Core**. This new configuration is saved on non-volatile-memory, so each time the device is rebooted, this custom configuration is used.
+
+**NOTE:** this command must be issued after the network commands for the changes to have effects.
 
 
 ---

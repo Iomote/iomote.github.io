@@ -5,7 +5,7 @@ position: 3
 
 ### User Button (P1)
 ~~~ cpp
-Iomote.buttonRead( )
+int Iomote.buttonRead( )
 ~~~
 **Parameters**
 - None

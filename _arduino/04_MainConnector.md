@@ -11,7 +11,7 @@ In this section will be covered all the commands to control the signals of the m
 
 ### **Analog and digital IO**
 ~~~ cpp
-Iomote.analogRead(int channel)
+float Iomote.analogRead(int channel)
 ~~~
 **Parameters**
 - **channel**: the analog channel you want to read. Main connector has two analog channels:
@@ -26,7 +26,7 @@ Iomote.analogRead(int channel)
 
 
 ~~~ cpp
-Iomote.digitalRead(int input)
+int Iomote.digitalRead(int input)
 ~~~
 **Parameters**
 - **input**: the digital input number you want to read. Main connector has two digital inputs, both can be used with 0 - 24V.
@@ -40,7 +40,7 @@ A int number with the read value (LOW or HIGH)
 
 
 ~~~ cpp
-Iomote.digitalWrite(int pin, int value)
+void Iomote.digitalWrite(int pin, int value)
 ~~~
 **Parameters**
 - **input**: the digital output number you want to write. Main connector has two digital outputs:
@@ -54,7 +54,7 @@ Iomote.digitalWrite(int pin, int value)
 Serial port of main connector can be used as RS232 or RS485, but not at the same time. All the methods of Arduino Serial class are wrapped to Iomote class methods with similar implementations.
 
 ~~~ cpp
-Iomote.serialBegin(int baudrate, uint8_t RS485_Mode)
+void Iomote.serialBegin(int baudrate, uint8_t RS485_Mode)
 ~~~
 **Parameters**
 - **baudrate**: the Serial port baudrate to be used.
