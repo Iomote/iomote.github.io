@@ -139,7 +139,7 @@ For debug purposes we have set up a Node JS application to easily receive the me
 // In this example the service bus connection string and queue names are provided using the 
 // service bus connection string provided on your  Iomote Dashboard User Settings
 // If you don't want to use command line parameters, just paste your connection string on 
-// connStr variable initializzation value instead of using command line arguments!
+// connStr variable initialization value instead of using command line arguments!
 // 
 // For Further reference please refer to Microsoft's documentation
 // https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues

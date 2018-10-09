@@ -4,9 +4,9 @@ position: 9
 --- 
 
 
-### Suggestion on hardware initializzation
-To allow the correct initializzation of **X400 App processor** peripherals and the communication with **Iomote Core processor**, we highly suggest you to place the `Iomote.begin(...)` function as first command of Arduino `setup()` method.
-All the further third party initializzation functions can be placed after that command.
+### Suggestion on hardware initialization
+To allow the correct initialization of **X400 App processor** peripherals and the communication with **Iomote Core processor**, we highly suggest you to place the `Iomote.begin(...)` function as first command of Arduino `setup()` method.
+All the further third party initialization functions can be placed after that command.
 
 As reference example, you can refer to [**Iomote Starter Kit Example code**](https://github.com/Iomote/iomote-app-starterkit).
 
